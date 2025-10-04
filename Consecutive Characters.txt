@@ -9,4 +9,47 @@ for i in range(t):
     for j in range(0,len(s)-1):
         if s[j]==s[j+1]:
             count+=1
+
     print(count)
+
+
+Search an element in an array:
+
+import sys
+
+def find_element():
+    def retry_read_line(line_number):
+        try:
+            line = sys.stdin.readline().strip()
+            if not line:
+                return None
+            return line
+        except:
+            return None
+
+    line1 = retry_read_line(1)
+    if line1 is None:
+        return
+
+    try:
+        _, x_target = map(int, line1.split())
+    except ValueError:
+        return
+
+    line2 = retry_read_line(2)
+    if line2 is None:
+        print("NO")
+        return
+
+    try:
+        array_a = list(map(int, line2.split()))
+    except ValueError:
+        print("NO")
+        return
+
+    if x_target in array_a:
+        print("YES")
+    else:
+        print("NO")
+
+find_element()
