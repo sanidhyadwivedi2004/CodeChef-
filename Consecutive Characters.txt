@@ -56,6 +56,25 @@ def find_element():
 find_element()
 
 ____________________________________________________________________________________________________________________________________________________________________
+def solve():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        heights = list(map(int, input().split()))
+
+        if not heights:
+            print(0)
+            continue
+
+        tallest_mountain = heights[0]
+        for height in heights[1:]:
+            if height > tallest_mountain:
+                tallest_mountain = height
+
+        print(tallest_mountain)
+
+if __name__ == "__main__":
+    solve()
 
 
 
