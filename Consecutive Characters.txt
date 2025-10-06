@@ -78,7 +78,52 @@ def solve():
 if __name__ == "__main__":
     solve()
 
-____________________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________________________________
+
+
+def solve():
+    import sys
+    try:
+        data = sys.stdin.readline().split()
+        if not data:
+            return
+        N, X, Y = map(int, data)
+    except:
+        return
+    try:
+        A = list(map(int, sys.stdin.readline().split()))
+    except:
+        return
+
+    cost_no_coupon = 0
+    total_discounted_item_price = 0
+
+    for price in A:
+        cost_no_coupon += price
+        
+        discounted_price = max(0, price - Y)
+        total_discounted_item_price += discounted_price
+
+    cost_with_coupon = X + total_discounted_item_price
+
+    if cost_with_coupon < cost_no_coupon:
+        print("COUPON")
+    else:
+        print("NO COUPON")
+
+
+def main():
+    import sys
+    try:
+        T = int(sys.stdin.readline())
+    except:
+        return
+
+    for _ in range(T):
+        solve()
+
+if __name__ == "__main__":
+    main()
 
 
 
