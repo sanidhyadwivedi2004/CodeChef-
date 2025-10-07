@@ -125,7 +125,7 @@ def main():
 if __name__ == "__main__":
     main()
 ___________________________________________________________________________________________________________________________________________________________________
-
+Cost of Groceries
 def solve():
     import sys
     input = sys.stdin.read
@@ -159,6 +159,7 @@ def solve():
     sys.stdout.write('\n'.join(results) + '\n')
 
 solve()
+
 
 
 
