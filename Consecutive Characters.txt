@@ -126,6 +126,39 @@ if __name__ == "__main__":
     main()
 ___________________________________________________________________________________________________________________________________________________________________
 
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    if not data:
+        return
+    
+    T = int(data[0])
+    results = []
+    data_idx = 1
+    
+    for _ in range(T):
+        N = int(data[data_idx])
+        X = int(data[data_idx + 1])
+        data_idx += 2
+        
+        A = [int(data[data_idx + i]) for i in range(N)]
+        data_idx += N
+        
+        B = [int(data[data_idx + i]) for i in range(N)]
+        data_idx += N
+        
+        total_cost = 0
+        for i in range(N):
+            if A[i] >= X:
+                total_cost += B[i]
+        
+        results.append(str(total_cost))
+        
+    sys.stdout.write('\n'.join(results) + '\n')
+
+solve()
 
 
 
